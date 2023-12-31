@@ -1,8 +1,12 @@
 <?php
 
-use Hyperf\Database\Schema\Schema;
-use Hyperf\Database\Schema\Blueprint;
+declare(strict_types=1);
+/**
+ * This file is part of CoolAdmin.
+ */
 use Hyperf\Database\Migrations\Migration;
+use Hyperf\Database\Schema\Blueprint;
+use Hyperf\Database\Schema\Schema;
 
 class BaseSystemDepartment extends Migration
 {
@@ -16,13 +20,12 @@ class BaseSystemDepartment extends Migration
             $table->dateTime('create_time')->comment('创建时间');
             $table->dateTime('update_time')->comment('更新时间');
 
-
             $table->string('name')->comment('部门名称');
             $table->bigInteger('parent_id')->comment('上级部门ID');
             $table->integer('order_number')->comment('排序');
 
-            $table->index('create_time','create_time');
-            $table->index('update_time','update_time');
+            $table->index('create_time', 'create_time');
+            $table->index('update_time', 'update_time');
         });
     }
 
@@ -32,7 +35,6 @@ class BaseSystemDepartment extends Migration
     public function down(): void
     {
         Schema::table('', function (Blueprint $table) {
-            //
         });
     }
 }

@@ -4,6 +4,8 @@ declare(strict_types=1);
 /**
  * This file is part of CoolAdmin.
  */
+use function Hyperf\Support\env;
+
 return [
     'default' => [
         'host' => env('REDIS_HOST', 'localhost'),

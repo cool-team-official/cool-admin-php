@@ -1,8 +1,12 @@
 <?php
 
-use Hyperf\Database\Schema\Schema;
-use Hyperf\Database\Schema\Blueprint;
+declare(strict_types=1);
+/**
+ * This file is part of CoolAdmin.
+ */
 use Hyperf\Database\Migrations\Migration;
+use Hyperf\Database\Schema\Blueprint;
+use Hyperf\Database\Schema\Schema;
 
 class BaseSystemConfig extends Migration
 {
@@ -18,8 +22,8 @@ class BaseSystemConfig extends Migration
             $table->string('config_key')->comment('配置键');
             $table->string('config_value')->comment('配置值');
 
-            $table->index('create_time','create_time');
-            $table->index('update_time','update_time');
+            $table->index('create_time', 'create_time');
+            $table->index('update_time', 'update_time');
         });
     }
 
@@ -29,7 +33,6 @@ class BaseSystemConfig extends Migration
     public function down(): void
     {
         Schema::table('', function (Blueprint $table) {
-            //
         });
     }
 }
